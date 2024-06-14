@@ -30,7 +30,7 @@ public class ContaTerminal {
         // TODO:Exibindo as mensagens para o usuário
         System.out.println("$$$$$ Bem Vindo ao Banco Banco! $$$$$");
 
-        // Obter os valores digitados no terminal
+        // TODO: Obtendo os valores digitados no terminal
         Scanner scanner = new Scanner(System.in);
         System.out.print("Por favor, digite o Número da Agência: ");
         String numeroAgencia = scanner.nextLine();
@@ -42,7 +42,7 @@ public class ContaTerminal {
         float saldoConta = scanner.nextFloat();
         scanner.close();
 
-        // Exibir a mensagem da conta criada
+        // TODO: Exibindo a mensagem da conta criada
         System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco. Sua agência é "
                 + numeroAgencia + ", conta e saldo " + saldoConta + " já estão disponíveis para saque.");
     }
