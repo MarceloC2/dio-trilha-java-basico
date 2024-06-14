@@ -27,25 +27,20 @@ import java.util.Scanner;
  **/
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
-        // Declaração das variáveis fora dos blocos try
-        String numeroAgencia;
-        String nomeCliente;
-        float saldoConta;
-
-        // Exibir as mensagens para o usuário
+        // TODO:Exibindo as mensagens para o usuário
         System.out.println("$$$$$ Bem Vindo ao Banco Banco! $$$$$");
 
         // Obter os valores digitados no terminal
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Por favor, digite o Número da Agência: ");
-            numeroAgencia = scanner.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Por favor, digite o Número da Agência: ");
+        String numeroAgencia = scanner.nextLine();
 
-            System.out.print("Por favor, digite seu Nome: ");
-            nomeCliente = scanner.nextLine();
+        System.out.print("Por favor, digite seu Nome: ");
+        String nomeCliente = scanner.nextLine();
 
-            System.out.print("Por favor, digite o Saldo da Sua Conta: ");
-            saldoConta = scanner.nextFloat();
-        }
+        System.out.print("Por favor, digite o Saldo da Sua Conta: ");
+        float saldoConta = scanner.nextFloat();
+        scanner.close();
 
         // Exibir a mensagem da conta criada
         System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco. Sua agência é "
