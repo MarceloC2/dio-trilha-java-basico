@@ -20,7 +20,7 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 ## UML
 ```mermaid
 classDiagram
-    interface NavegadorInternet {
+    class NavegadorInternet {
         +exibirPagina()
         +adicionarNovaAba()
         +atualizarPagina()
@@ -36,7 +36,7 @@ classDiagram
         +main(String[] args)
     }
 
-    interface Ipod {
+    class Ipod {
         +tocarMusica()
         +pausarMusica()
         +selecionarMusica()
@@ -48,7 +48,7 @@ classDiagram
         +selecionarMusica()
     }
 
-    interface AparelhoTelefonico {
+    class AparelhoTelefonico {
         +ligar()
         +atender()
         +iniciarCorreioVoz()
@@ -61,9 +61,10 @@ classDiagram
     }
 
     NavegadorInternet <|.. SafariNavegador
-    Iphone -> NavegadorInternet
-    Iphone -> Ipod
+    Iphone --> NavegadorInternet
+    Iphone --> Ipod
     Ipod <|.. ExecutarIpod
-    Iphone -> AparelhoTelefonico
+    Iphone --> AparelhoTelefonico
     AparelhoTelefonico <|.. ChamadasTelefonicas
+
 ```
