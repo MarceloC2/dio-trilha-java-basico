@@ -16,3 +16,54 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+## UML
+```mermaid
+classDiagram
+    interface NavegadorInternet {
+        +exibirPagina()
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
+
+    class SafariNavegador {
+        +exibirPagina()
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
+
+    class Iphone {
+        +main(String[] args)
+    }
+
+    interface Ipod {
+        +tocarMusica()
+        +pausarMusica()
+        +selecionarMusica()
+    }
+
+    class ExecutarIpod {
+        +tocarMusica()
+        +pausarMusica()
+        +selecionarMusica()
+    }
+
+    interface AparelhoTelefonico {
+        +ligar()
+        +atender()
+        +iniciarCorreioVoz()
+    }
+
+    class ChamadasTelefonicas {
+        +ligar()
+        +atender()
+        +iniciarCorreioVoz()
+    }
+
+    NavegadorInternet <|.. SafariNavegador
+    Iphone -> NavegadorInternet
+    Iphone -> Ipod
+    Ipod <|.. ExecutarIpod
+    Iphone -> AparelhoTelefonico
+    AparelhoTelefonico <|.. ChamadasTelefonicas
+```
