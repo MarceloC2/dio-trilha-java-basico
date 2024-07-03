@@ -1,48 +1,32 @@
 @startuml
-interface NavegadorInternet {
-    +exibirPagina()
-    +adicionarNovaAba()
-    +atualizarPagina()
-}
+classDiagram
+    class SafariNavegador {
+        +exibirPagina()
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
 
-class SafariNavegador {
-    +exibirPagina()
-    +adicionarNovaAba()
-    +atualizarPagina()
-}
+    class Iphone {
+        +main(String[] args)
+        - navegador: SafariNavegador
+        - ipod: ExecutarIpod
+        - chamadas: ChamadasTelefonicas
+    }
 
-class Iphone {
-    +main(String[] args)
-}
+    class ExecutarIpod {
+        +tocarMusica()
+        +pausarMusica()
+        +selecionarMusica()
+    }
 
-interface Ipod {
-    +tocarMusica()
-    +pausarMusica()
-    +selecionarMusica()
-}
+    class ChamadasTelefonicas {
+        +ligar()
+        +atender()
+        +iniciarCorreioVoz()
+    }
 
-class ExecutarIpod {
-    +tocarMusica()
-    +pausarMusica()
-    +selecionarMusica()
-}
+    Iphone -> SafariNavegador
+    Iphone -> ExecutarIpod
+    Iphone -> ChamadasTelefonicas
 
-interface AparelhoTelefonico {
-    +ligar()
-    +atender()
-    +iniciarCorreioVoz()
-}
-
-class ChamadasTelefonicas {
-    +ligar()
-    +atender()
-    +iniciarCorreioVoz()
-}
-
-NavegadorInternet <|.. SafariNavegador
-Iphone -> NavegadorInternet
-Iphone -> Ipod
-Ipod <|.. ExecutarIpod
-Iphone -> AparelhoTelefonico
-AparelhoTelefonico <|.. ChamadasTelefonicas
 @enduml
